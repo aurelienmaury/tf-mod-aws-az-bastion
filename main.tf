@@ -4,7 +4,7 @@ resource "aws_instance" "bastion" {
   instance_type = "${var.instance_type}"
   key_name = "${var.keypair}"
   subnet_id = "${var.subnet_id}"
-  security_groups = ["${split(',', var.security_groups}"]
+  security_groups = ["${split(",", var.security_groups)}"]
 
   tags {
     Name = "Bastion ${var.name}"
